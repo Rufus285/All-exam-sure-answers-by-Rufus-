@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Exam Sure Answers - NECO GCE & National Exams VIP Portal</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0284c7',
+                            600: '#0369a1',
+                            700: '#075985',
+                            800: '#0c4a6e',
+                            900: '#0f172a',
+                        },
+                        amberGold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'Courier New', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .blur-lock {
+            filter: blur(8px);
+            user-select: none;
+            pointer-events: none;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.05);
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(100,116,139,0.3);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 flex flex-col min-h-screen transition-colors duration-200">
+
+    <!-- Top Live Ticker Banner -->
+    <div class="bg-gradient-to-r from-red-600 via-amber-600 to-emerald-600 text-white text-xs py-2 px-4 shadow-sm">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+            <div class="flex items-center gap-2 font-semibold tracking-wide">
+                <span class="flex h-2 w-2 relative">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                </span>
+                <span class="bg-white/20 px-2 py-0.5 rounded text-[10px] uppercase tracking-wider font-extrabold">LIVE HUB</span>
+                <span>NECO GCE EXAMS IN PROGRESS — Answers Loading Direct From Source!</span>
+            </div>
+            <div class="flex items-center gap-4 text-[11px] font-medium">
+                <span><i class="fa-solid fa-shield-halved text-amberGold-400 mr-1"></i> 100% Verified Keys</span>
+                <a href="#pinInfo" class="underline hover:text-amberGold-300 font-bold">Get VIP Access PIN</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur border-b border-slate-200 dark:border-slate-800 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Brand Logo -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-600 via-brand-700 to-emerald-600 flex items-center justify-center text-white shadow-md shadow-brand-500/20">
+                        <i class="fa-solid fa-key font-bold text-lg"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight">
+                            AllExam<span class="text-brand-600 dark:text-brand-400">SureAnswers</span>
+                        </span>
+                        <span class="block text-[9px] font-extrabold text-amber-600 dark:text-amber-400 tracking-widest uppercase -mt-1">.net.com • VIP Exam Center</span>
+                    </div>
+                </div>
+
+                <!-- Right Tools / Buttons -->
+                <div class="flex items-center space-x-3">
+                    <!-- Theme Toggle Button -->
+                    <button id="themeToggleBtn" onclick="toggleDarkMode()" class="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-brand-600 transition" title="Toggle Theme">
+                        <i class="fa-solid fa-moon dark:hidden"></i>
+                        <i class="fa-solid fa-sun hidden dark:inline"></i>
+                    </button>
+
+                    <!-- Owner Admin Button -->
+                    <button onclick="openAdminAuthModal()" class="px-3.5 py-2 text-xs font-bold bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 hover:bg-brand-600 dark:hover:bg-brand-400 dark:hover:text-white rounded-xl shadow-sm transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-lock text-amberGold-400 dark:text-brand-700"></i>
+                        <span>Owner Dashboard</span>
+                    </button>
+
+                    <!-- Quick WhatsApp Help -->
+                    <a href="https://wa.me/?text=Hello%20Admin,%20I%20want%20to%20get%20the%20VIP%20Access%20PIN%20for%20NECO%20GCE%20Answers" target="_blank" class="hidden sm:flex px-3.5 py-2 text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-700 rounded-xl shadow-sm transition items-center gap-1.5">
+                        <i class="fa-brands fa-whatsapp text-sm"></i>
+                        <span>Get Access PIN</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Announcement Section -->
+    <section class="bg-slate-900 text-white relative py-12 px-4 sm:px-6 lg:px-8 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto relative z-10 text-center">
+            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs font-bold text-emerald-400 mb-4">
+                <i class="fa-solid fa-bolt text-amberGold-400"></i> NECO GCE EXAM ANSWERS READY
+            </span>
+            <h1 class="text-3xl sm:text-5xl font-black tracking-tight max-w-3xl mx-auto leading-tight">
+                Direct Confirmed Answers & <span class="text-transparent bg-clip-text bg-gradient-to-r from-amberGold-400 to-emerald-400">Verified Objective Keys</span>
+            </h1>
+            <p class="mt-3 text-sm sm:text-base text-slate-300 max-w-2xl mx-auto">
+                Welcome to <strong>allexamsureanswers.net.com</strong>. Select your candidate paper below and input your access PIN to reveal full questions, objectives, theory, and practical solutions.
+            </p>
+
+            <!-- Quick Status Cards -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-4xl mx-auto mt-8 text-left">
+                <div class="bg-slate-800/80 p-3.5 rounded-xl border border-slate-700">
+                    <span class="text-[10px] uppercase font-bold text-slate-400">Active Exam</span>
+                    <p class="text-sm font-extrabold text-amberGold-400 mt-0.5">NECO GCE</p>
+                </div>
+                <div class="bg-slate-800/80 p-3.5 rounded-xl border border-slate-700">
+                    <span class="text-[10px] uppercase font-bold text-slate-400">Verification</span>
+                    <p class="text-sm font-extrabold text-emerald-400 mt-0.5"><i class="fa-solid fa-check-circle mr-1"></i> 100% Guaranteed</p>
+                </div>
+                <div class="bg-slate-800/80 p-3.5 rounded-xl border border-slate-700">
+                    <span class="text-[10px] uppercase font-bold text-slate-400">System Lock</span>
+                    <p class="text-sm font-extrabold text-slate-200 mt-0.5" id="currentPinStatusDisplay">PIN Protected</p>
+                </div>
+                <div class="bg-slate-800/80 p-3.5 rounded-xl border border-slate-700">
+                    <span class="text-[10px] uppercase font-bold text-slate-400">Speed Delivery</span>
+                    <p class="text-sm font-extrabold text-brand-400 mt-0.5">30 Mins Before Time</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow w-full">
+        
+        <!-- Category & Subject Filter Tabs -->
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-8">
+            <div class="flex flex-wrap items-center gap-2 w-full md:w-auto" id="categoryTabs">
+                <button onclick="filterCategory('all')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold transition bg-brand-600 text-white shadow-md">All Subjects</button>
+                <button onclick="filterCategory('science')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold transition bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700">Science</button>
+                <button onclick="filterCategory('art')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold transition bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700">Arts / Humanities</button>
+                <button onclick="filterCategory('commercial')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold transition bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700">Commercial</button>
+            </div>
+
+            <!-- Search Field -->
+            <div class="relative w-full md:w-72">
+                <i class="fa-solid fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+                <input type="text" id="subjectSearch" onkeyup="searchSubjects(this.value)" placeholder="Search subject (e.g. Physics, Eng)..." class="w-full pl-9 pr-4 py-2 text-xs bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 text-slate-800 dark:text-slate-100">
+            </div>
+        </div>
+
+        <!-- Dynamic Subjects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="subjectCardsContainer">
+            <!-- Rendered dynamically -->
+        </div>
+
+        <!-- PIN Purchase Info Card -->
+        <section id="pinInfo" class="mt-16 bg-gradient-to-br from-slate-900 to-brand-950 rounded-3xl text-white p-6 sm:p-10 shadow-2xl relative overflow-hidden border border-slate-800">
+            <div class="absolute right-0 top-0 opacity-10 text-9xl p-4 pointer-events-none text-white">
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <div class="relative z-10 max-w-3xl">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-amberGold-400 bg-amberGold-500/10 px-3 py-1 rounded-full border border-amberGold-500/20">Official Access Portal</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold mt-3">How To Get Your Answers Access PIN</h2>
+                <p class="text-slate-300 text-xs sm:text-sm mt-2 leading-relaxed">
+                    Answers on <strong>allexamsureanswers.net.com</strong> are locked to protect content integrity and ensure registered VIP candidates get direct early delivery.
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6 text-xs">
+                    <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
+                        <span class="w-6 h-6 rounded-full bg-brand-500 text-white font-bold flex items-center justify-center text-xs mb-2">1</span>
+                        <h4 class="font-bold text-white text-sm">Contact Admin</h4>
+                        <p class="text-slate-400 mt-1">Click the WhatsApp button to chat with the site owner.</p>
+                    </div>
+                    <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
+                        <span class="w-6 h-6 rounded-full bg-amberGold-500 text-slate-900 font-bold flex items-center justify-center text-xs mb-2">2</span>
+                        <h4 class="font-bold text-white text-sm">Get PIN</h4>
+                        <p class="text-slate-400 mt-1">Request your unique subject PIN or Master Pass Code for all papers.</p>
+                    </div>
+                    <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
+                        <span class="w-6 h-6 rounded-full bg-emerald-500 text-white font-bold flex items-center justify-center text-xs mb-2">3</span>
+                        <h4 class="font-bold text-white text-sm">Unlock & Copy</h4>
+                        <p class="text-slate-400 mt-1">Enter your PIN on any paper card to reveal full objective & essay solutions.</p>
+                    </div>
+                </div>
+
+                <div class="mt-8 flex flex-wrap items-center gap-4">
+                    <a href="https://wa.me/?text=Hello%20Admin,%20I%20want%20to%20buy%20the%20Access%20PIN%20for%20NECO%20GCE%20All%20Subjects" target="_blank" class="px-6 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl shadow-lg transition flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Request PIN via WhatsApp Now
+                    </a>
+                    <button onclick="openPinModal(null)" class="px-6 py-3.5 bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs rounded-xl border border-slate-700 transition">
+                        I Have A PIN - Unlock Answers
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-8 text-xs text-slate-500 dark:text-slate-400 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>
+                <p class="font-bold text-slate-800 dark:text-slate-200 text-sm">AllExamSureAnswers.net.com</p>
+                <p class="mt-0.5">Nigeria's No. 1 Trusted NECO GCE, WAEC & JAMB Answer Hub.</p>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button onclick="openAdminAuthModal()" class="hover:text-brand-600 font-semibold"><i class="fa-solid fa-user-gear mr-1"></i> Owner Portal</button>
+                <span>•</span>
+                <a href="#pinInfo" class="hover:text-brand-600 font-semibold">PIN Purchase</a>
+                <span>•</span>
+                <span id="statUnlockCount">0 Answers Unlocked Today</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==============================================================
+         MODALS CONTAINER
+         ============================================================== -->
+
+    <!-- 1. PIN Access Modal (Student Unlock) -->
+    <div id="pinModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-slate-200 dark:border-slate-800 relative animate-in fade-in zoom-in duration-200">
+            <button onclick="closePinModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-white p-2">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="text-center">
+                <div class="w-14 h-14 bg-amber-500/10 text-amberGold-500 rounded-2xl flex items-center justify-center mx-auto mb-3 text-2xl font-bold">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <h3 class="text-xl font-black text-slate-900 dark:text-white" id="pinModalSubjectTitle">Unlock Subject Answers</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Enter your Access PIN (Default: <strong>12345</strong>) to view verified solutions.</p>
+            </div>
+
+            <form onsubmit="handlePinSubmit(event)" class="mt-6 space-y-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase text-slate-600 dark:text-slate-300 mb-1.5">Enter Access PIN</label>
+                    <input type="password" id="userPinInput" maxlength="10" placeholder="e.g. 12345" required class="w-full text-center tracking-widest text-lg font-mono px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 text-slate-900 dark:text-white font-extrabold">
+                </div>
+
+                <div id="pinErrorMsg" class="hidden text-xs text-red-500 font-semibold text-center bg-red-50 dark:bg-red-950/40 p-2.5 rounded-lg border border-red-200 dark:border-red-900">
+                    Invalid Access PIN! Please contact Admin for the correct PIN.
+                </div>
+
+                <button type="submit" class="w-full py-3.5 bg-brand-600 hover:bg-brand-500 text-white font-extrabold text-sm rounded-xl shadow-lg transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-key"></i> Unlock Answers Now
+                </button>
+            </form>
+
+            <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800 text-center">
+                <p class="text-xs text-slate-500 dark:text-slate-400">Don't have an Access PIN yet?</p>
+                <a href="https://wa.me/?text=Hello%20Admin,%20I%20need%20the%20Access%20PIN%20to%20unlock%20NECO%20GCE%20Answers" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-600 dark:text-emerald-400 hover:underline mt-1">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> Chat Owner on WhatsApp for PIN
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Admin Authentication Modal -->
+    <div id="adminAuthModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-sm w-full p-6 shadow-2xl border border-slate-200 dark:border-slate-800 relative">
+            <button onclick="closeAdminAuthModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-white p-2">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="text-center">
+                <div class="w-12 h-12 bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900 rounded-2xl flex items-center justify-center mx-auto mb-3 text-xl font-bold">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">Owner Portal Login</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Enter Owner Passcode (Default: <strong>admin123</strong>)</p>
+            </div>
+
+            <form onsubmit="handleAdminAuth(event)" class="mt-5 space-y-4">
+                <input type="password" id="adminPassInput" placeholder="Passcode (admin123)" required class="w-full text-center tracking-widest text-base font-mono px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 text-slate-900 dark:text-white font-bold">
+
+                <div id="adminAuthError" class="hidden text-xs text-red-500 text-center font-semibold">
+                    Incorrect Passcode!
+                </div>
+
+                <button type="submit" class="w-full py-3 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 font-bold text-xs rounded-xl shadow transition">
+                    Access Owner Control Panel
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 3. Owner / Admin Control Panel Drawer/Modal -->
+    <div id="adminDashboardModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 dark:border-slate-800 relative my-8 max-h-[90vh] overflow-y-auto custom-scrollbar">
+            
+            <!-- Dashboard Header -->
+            <div class="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-800 mb-6">
+                <div>
+                    <span class="text-[10px] font-extrabold uppercase bg-brand-50 dark:bg-brand-950 text-brand-600 dark:text-brand-400 px-2.5 py-1 rounded">SITE OWNER CONTROLLER</span>
+                    <h3 class="text-xl font-black text-slate-900 dark:text-white mt-1">Website Master Dashboard</h3>
+                </div>
+                <button onclick="closeAdminDashboard()" class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 text-xs font-bold rounded-lg text-slate-600 dark:text-slate-300 hover:bg-red-500 hover:text-white">
+                    Close Dashboard
+                </button>
+            </div>
+
+            <!-- PIN Management Section -->
+            <div class="bg-slate-50 dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700/80 mb-6">
+                <h4 class="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-2">
+                    <i class="fa-solid fa-key text-amberGold-500"></i> Change Master Student Access PIN
+                </h4>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">
+                    Students must enter this PIN to reveal answers across all subjects. You can change this anytime!
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center gap-3">
+                    <input type="text" id="masterPinInput" placeholder="New Access PIN e.g. 12345" class="w-full sm:w-64 px-4 py-2.5 text-sm font-mono font-bold bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500">
+                    <button onclick="updateMasterPin()" class="w-full sm:w-auto px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl shadow transition">
+                        Update PIN Now
+                    </button>
+                </div>
+                <p class="text-[11px] text-slate-400 mt-2">Current Active PIN: <strong id="activePinDisplayText" class="text-amberGold-500 font-mono text-sm">12345</strong></p>
+            </div>
+
+            <!-- Add / Edit Subject Answer Post Section -->
+            <div class="space-y-4">
+                <h4 class="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                    <i class="fa-solid fa-file-pen text-brand-500"></i> Post or Edit Subject Answers
+                </h4>
+
+                <form onsubmit="handleSaveSubject(event)" class="space-y-4 text-xs">
+                    <input type="hidden" id="editSubjectId" value="">
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Subject Name</label>
+                            <input type="text" id="adminSubjectTitle" required placeholder="e.g. NECO GCE Mathematics (Obj & Theory)" class="w-full px-3.5 py-2.5 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500">
+                        </div>
+                        <div>
+                            <label class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Category</label>
+                            <select id="adminSubjectCat" class="w-full px-3.5 py-2.5 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500">
+                                <option value="science">Science</option>
+                                <option value="art">Arts / Humanities</option>
+                                <option value="commercial">Commercial</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Status Tag</label>
+                            <select id="adminSubjectStatus" class="w-full px-3.5 py-2.5 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500">
+                                <option value="LIVE NOW">LIVE NOW (Answers Ready)</option>
+                                <option value="LOADING...">LOADING (In Progress)</option>
+                                <option value="VERIFIED">VERIFIED & COMPLETED</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Exam Date / Time</label>
+                            <input type="text" id="adminSubjectTime" placeholder="e.g. Today 9:30 AM" class="w-full px-3.5 py-2.5 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white">
+                        </div>
+                    </div>
+
+                    <!-- Objectives Key Input -->
+                    <div>
+                        <label class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Objective Answers Key (e.g., 1-10: A B C D A B C D A B)</label>
+                        <textarea id="adminObjAnswers" rows="2" placeholder="1-5: A B C D A&#10;6-10: B C A D D" class="w-full px-3.5 py-2.5 font-mono bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white"></textarea>
+                    </div>
+
+                    <!-- Essay / Theory Solutions Input -->
+                    <div>
+                        <label class="block font-bold text-slate-700 dark:text-slate-300 mb-1">Essay / Theory Solutions & Breakdown</label>
+                        <textarea id="adminEssayAnswers" rows="5" placeholder="NUMBER 1a)...&#10;NUMBER 1b)..." class="w-full px-3.5 py-2.5 font-mono bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white"></textarea>
+                    </div>
+
+                    <div class="flex justify-end gap-3 pt-2">
+                        <button type="button" onclick="clearAdminForm()" class="px-4 py-2 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold rounded-xl">Clear Form</button>
+                        <button type="submit" class="px-6 py-2.5 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-xl shadow">Save & Publish Answers</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toastContainer" class="fixed bottom-5 right-5 z-50 flex flex-col space-y-2 pointer-events-none"></div>
+
+    <!-- ==============================================================
+         JAVASCRIPT LOGIC
+         ============================================================== -->
+    <script>
+        /* -------------------------------------------------------------
+           1. INITIAL DATA STORE (Local Storage Supported)
+           ------------------------------------------------------------- */
+        
+        const DEFAULT_MASTER_PIN = "12345";
+        const DEFAULT_ADMIN_PASSCODE = "admin123";
+
+        const defaultSubjects = [
+            {
+                id: 1,
+                title: "NECO GCE English Language (Obj, Essay & Test of Oral)",
+                category: "art",
+                status: "LIVE NOW",
+                time: "Today Paper I & II",
+                unlocked: false,
+                obj: "1-10: C A B D C B A D C B\n11-20: A C B D A B C D A A\n21-30: D C A B C D A B C D\n31-40: B A C D B A C D A B\n41-60: C B A D C A B D C A",
+                essay: "SECTION A: ESSAY WRITING\nAnswer one question from this section.\n\n1. Write a letter to your uncle explaining three reasons why you prefer studying in a public university.\n\n[SOLUTION]\nDear Uncle Ibrahim,\nI am writing this letter with great joy and appreciation for your continuous support in my education...\n[Point 1: Lower Tuition Fees]\n[Point 2: Diverse Cultural & Academic Exposure]\n[Point 3: Better Research Facilities]\n\nSECTION B: COMPREHENSION\n2a) The main cause of deforestation mentioned in paragraph 2 is uncontrolled urban expansion.\n2b) Metaphor: 'The forest was a green blanket'.\n\nSECTION C: SUMMARY\n3a) Three measures to curb cybercrime:\ni) Enforcement of strict cyber law penalties.\nii) Regular public security awareness.\niii) Implementation of multi-factor authentication systems."
+            },
+            {
+                id: 2,
+                title: "NECO GCE General Mathematics (Core Obj & Theory)",
+                category: "science",
+                status: "LIVE NOW",
+                time: "Today 8:30 AM",
+                unlocked: false,
+                obj: "1-10: B C A D D A C B B A\n11-20: C A D B A C B D D C\n21-30: A B C D A B C D A B\n31-40: D C B A D C B A D C\n41-50: A C B D A C B D A C",
+                essay: "QUESTION 1:\nEvaluate: (3.2 x 10^4) * (1.5 x 10^-2) / (6.0 x 10^1)\nSolution:\n= 4.8 x 10^2 / 60\n= 480 / 60 = 8\n\nQUESTION 2 (Quadratic Equation):\nSolve 2x² - 7x + 3 = 0\nUsing factorization:\n2x² - 6x - x + 3 = 0\n2x(x - 3) - 1(x - 3) = 0\n(2x - 1)(x - 3) = 0\nTherefore, x = 1/2 or x = 3."
+            },
+            {
+                id: 3,
+                title: "NECO GCE Physics (Theory & Practical)",
+                category: "science",
+                status: "VERIFIED",
+                time: "Tomorrow 9:00 AM",
+                unlocked: false,
+                obj: "1-10: A D C B A C B D A C\n11-20: B A D C B A D C B A\n21-30: C D A B C D A B C D\n31-40: A B C D A B C D A B",
+                essay: "PRACTICAL EXPERIMENT 1 (PENDULUM):\nTable of Values:\nL(cm) | t1(s) | t2(s) | T=t/20(s) | T²(s²)\n80.0  | 36.0  | 36.2  | 1.81      | 3.28\n70.0  | 33.6  | 33.8  | 1.69      | 2.85\n60.0  | 31.0  | 31.2  | 1.56      | 2.43\n\nSlope (S) = Δ(T²) / ΔL = (3.28 - 2.43) / (80 - 60) = 0.0425 s²/cm\nAcceleration due to gravity g = 4π² / Slope = 981 cm/s²."
+            },
+            {
+                id: 4,
+                title: "NECO GCE Chemistry (Obj & Practical)",
+                category: "science",
+                status: "LOADING...",
+                time: "2:00 PM Afternoon Session",
+                unlocked: false,
+                obj: "Answers uploading in 10 minutes... Check back with PIN.",
+                essay: "Titration Practical Values:\nBurrette Capacity: 50cm³\nAverage volume of Acid used Va = 24.50 cm³\nIndicator used: Methyl Orange (Pink to Yellow at end point)."
+            },
+            {
+                id: 5,
+                title: "NECO GCE Biology (Obj, Essay & Practical)",
+                category: "science",
+                status: "LIVE NOW",
+                time: "Paper I & II",
+                unlocked: false,
+                obj: "1-10: C A D B A C B D A C\n11-20: B C D A A B C D A B\n21-30: D A C B C D A B C D",
+                essay: "QUESTION 1:\na) Define Osmosis: Osmosis is the movement of water molecules from a region of lower solute concentration to a region of higher solute concentration through a selectively permeable membrane.\nb) List three differences between Osmosis and Diffusion."
+            },
+            {
+                id: 6,
+                title: "NECO GCE Financial Accounting & Commerce",
+                category: "commercial",
+                status: "LIVE NOW",
+                time: "Today Session",
+                unlocked: false,
+                obj: "1-10: D C B A D C B A D C\n11-20: A B C D A B C D A B\n21-30: C A B D C A B D C A",
+                essay: "QUESTION 1: TRADING, PROFIT & LOSS ACCOUNT\nSales: #450,000\nLess Cost of Goods Sold:\nOpening Stock: #50,000\nAdd Purchases: #200,000\nLess Closing Stock: (#30,000)\nCost of Sales = #220,000\nGross Profit = #230,000."
+            },
+            {
+                id: 7,
+                title: "NECO GCE Economics (Paper I & II)",
+                category: "commercial",
+                status: "VERIFIED",
+                time: "Completed",
+                unlocked: false,
+                obj: "1-10: B D C A B D C A B D\n11-20: A C B D A C B D A C",
+                essay: "QUESTION 1:\na) Elasticity of demand = % change in quantity demanded / % change in price.\nb) Ed = ((150 - 100)/100) / ((40 - 50)/50) = 0.5 / (-0.2) = -2.5 (Inelastic)."
+            }
+        ];
+
+        // State Variables
+        let subjects = [];
+        let currentActivePin = DEFAULT_MASTER_PIN;
+        let selectedSubjectIdForUnlock = null;
+        let currentFilter = 'all';
+
+        /* -------------------------------------------------------------
+           2. APP INITIALIZATION
+           ------------------------------------------------------------- */
+        window.onload = function() {
+            // Load custom PIN or default
+            const savedPin = localStorage.getItem('allexam_master_pin');
+            if (savedPin) {
+                currentActivePin = savedPin;
+            } else {
+                localStorage.setItem('allexam_master_pin', DEFAULT_MASTER_PIN);
+            }
+
+            // Load subjects from storage or defaults
+            const savedSubjects = localStorage.getItem('allexam_subjects');
+            if (savedSubjects) {
+                try {
+                    subjects = JSON.parse(savedSubjects);
+                } catch(e) {
+                    subjects = defaultSubjects;
+                }
+            } else {
+                subjects = defaultSubjects;
+                localStorage.setItem('allexam_subjects', JSON.stringify(subjects));
+            }
+
+            // Theme Check
+            if (localStorage.getItem('allexam_theme') === 'dark') {
+                document.documentElement.classList.add('dark');
+            }
+
+            updatePinDisplays();
+            renderSubjectCards();
+            updateUnlockCounter();
+        };
+
+        /* -------------------------------------------------------------
+           3. UI RENDER FUNCTIONS
+           ------------------------------------------------------------- */
+        
+        function renderSubjectCards() {
+            const container = document.getElementById('subjectCardsContainer');
+            const searchVal = document.getElementById('subjectSearch').value.toLowerCase();
+
+            const filtered = subjects.filter(s => {
+                const matchesCat = currentFilter === 'all' || s.category === currentFilter;
+                const matchesSearch = s.title.toLowerCase().includes(searchVal);
+                return matchesCat && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full text-center py-12 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800">
+                        <i class="fa-solid fa-folder-open text-4xl text-slate-300 dark:text-slate-700 mb-3"></i>
+                        <p class="text-sm font-bold text-slate-700 dark:text-slate-300">No subject paper found matching your query.</p>
+                        <p class="text-xs text-slate-400 mt-1">Try switching category tabs or clearing search filter.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = filtered.map(sub => {
+                const isUnlocked = sub.unlocked === true;
+
+                let badgeColor = "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20";
+                if(sub.status.includes('LOADING')) badgeColor = "bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20";
+
+                return `
+                    <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-200 overflow-hidden flex flex-col justify-between">
+                        <!-- Top Header Info -->
+                        <div class="p-6 pb-4">
+                            <div class="flex items-center justify-between gap-2 mb-3">
+                                <span class="text-[10px] font-extrabold px-2.5 py-1 rounded-full border ${badgeColor} uppercase tracking-wider">
+                                    <i class="fa-solid fa-circle text-[6px] mr-1"></i> ${sub.status}
+                                </span>
+                                <span class="text-[11px] text-slate-400 font-medium">
+                                    <i class="fa-regular fa-clock mr-1"></i> ${sub.time}
+                                </span>
+                            </div>
+
+                            <h3 class="text-lg font-extrabold text-slate-900 dark:text-white leading-snug">
+                                ${sub.title}
+                            </h3>
+                        </div>
+
+                        <!-- Content Area (Locked or Unlocked) -->
+                        <div class="px-6 py-4 bg-slate-50 dark:bg-slate-950/60 border-y border-slate-100 dark:border-slate-800 flex-grow relative">
+                            ${!isUnlocked ? `
+                                <!-- Locked Overlay Screen -->
+                                <div class="absolute inset-0 z-10 bg-slate-900/60 backdrop-blur-md flex flex-col items-center justify-center p-4 text-center rounded-b-none">
+                                    <div class="w-10 h-10 rounded-full bg-amberGold-500 text-slate-950 flex items-center justify-center font-bold text-lg mb-2 shadow-lg">
+                                        <i class="fa-solid fa-lock"></i>
+                                    </div>
+                                    <p class="text-xs font-bold text-white">VIP ANSWERS LOCKED</p>
+                                    <p class="text-[11px] text-slate-300 mt-0.5">Enter Access PIN to view Obj & Essay Key</p>
+                                    <button onclick="openPinModal(${sub.id})" class="mt-3 px-4 py-2 bg-brand-600 hover:bg-brand-500 text-white font-extrabold text-xs rounded-xl shadow transition">
+                                        Unlock Answers Now
+                                    </button>
+                                </div>
+                            ` : ''}
+
+                            <!-- Actual Content (Blurred when locked) -->
+                            <div class="${!isUnlocked ? 'blur-lock' : ''} space-y-4 text-xs font-mono">
+                                <div>
+                                    <span class="text-[10px] uppercase font-bold text-brand-600 dark:text-brand-400 tracking-wider block mb-1">
+                                        [OBJECTIVE ANSWER KEYS]
+                                    </span>
+                                    <div class="bg-white dark:bg-slate-900 p-3 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 whitespace-pre-wrap">
+                                        ${sub.obj}
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <span class="text-[10px] uppercase font-bold text-emerald-600 dark:text-emerald-400 tracking-wider block mb-1">
+                                        [ESSAY & THEORY SOLUTIONS]
+                                    </span>
+                                    <div class="bg-white dark:bg-slate-900 p-3 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 whitespace-pre-wrap max-h-48 overflow-y-auto custom-scrollbar">
+                                        ${sub.essay}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Card Actions -->
+                        <div class="p-4 bg-white dark:bg-slate-900 flex items-center justify-between text-xs">
+                            ${isUnlocked ? `
+                                <span class="text-emerald-600 dark:text-emerald-400 font-bold flex items-center gap-1">
+                                    <i class="fa-solid fa-lock-open"></i> Unlocked
+                                </span>
+                                <div class="flex gap-2">
+                                    <button onclick="copyAnswerText(${sub.id})" class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold rounded-lg transition">
+                                        <i class="fa-regular fa-copy mr-1"></i> Copy
+                                    </button>
+                                    <button onclick="window.print()" class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold rounded-lg transition">
+                                        <i class="fa-solid fa-print mr-1"></i> Print
+                                    </button>
+                                </div>
+                            ` : `
+                                <span class="text-amber-600 dark:text-amber-400 font-bold flex items-center gap-1">
+                                    <i class="fa-solid fa-shield"></i> PIN Required
+                                </span>
+                                <button onclick="openPinModal(${sub.id})" class="text-brand-600 dark:text-brand-400 font-extrabold hover:underline">
+                                    Enter PIN &rarr;
+                                </button>
+                            `}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        /* -------------------------------------------------------------
+           4. PIN UNLOCK HANDLERS
+           ------------------------------------------------------------- */
+        
+        function openPinModal(subjectId) {
+            selectedSubjectIdForUnlock = subjectId;
+            const sub = subjects.find(s => s.id === subjectId);
+            if(sub) {
+                document.getElementById('pinModalSubjectTitle').innerText = sub.title;
+            } else {
+                document.getElementById('pinModalSubjectTitle').innerText = "Unlock All Answers";
+            }
+            document.getElementById('userPinInput').value = '';
+            document.getElementById('pinErrorMsg').classList.add('hidden');
+            document.getElementById('pinModal').classList.remove('hidden');
+        }
+
+        function closePinModal() {
+            document.getElementById('pinModal').classList.add('hidden');
+        }
+
+        function handlePinSubmit(e) {
+            e.preventDefault();
+            const inputPin = document.getElementById('userPinInput').value.trim();
+
+            if (inputPin === currentActivePin) {
+                // Correct PIN unlocked
+                if (selectedSubjectIdForUnlock) {
+                    const sub = subjects.find(s => s.id === selectedSubjectIdForUnlock);
+                    if (sub) sub.unlocked = true;
+                } else {
+                    // Unlock all
+                    subjects.forEach(s => s.unlocked = true);
+                }
+
+                saveSubjectsState();
+                renderSubjectCards();
+                closePinModal();
+                showToast("Access Granted! Subject answers unlocked successfully.");
+                updateUnlockCounter();
+            } else {
+                // Wrong PIN
+                document.getElementById('pinErrorMsg').classList.remove('hidden');
+            }
+        }
+
+        function updateUnlockCounter() {
+            const count = subjects.filter(s => s.unlocked).length;
+            document.getElementById('statUnlockCount').innerText = `${count} Answers Unlocked Today`;
+        }
+
+        /* -------------------------------------------------------------
+           5. OWNER / ADMIN DASHBOARD LOGIC
+           ------------------------------------------------------------- */
+        
+        function openAdminAuthModal() {
+            document.getElementById('adminPassInput').value = '';
+            document.getElementById('adminAuthError').classList.add('hidden');
+            document.getElementById('adminAuthModal').classList.remove('hidden');
+        }
+
+        function closeAdminAuthModal() {
+            document.getElementById('adminAuthModal').classList.add('hidden');
+        }
+
+        function handleAdminAuth(e) {
+            e.preventDefault();
+            const inputPass = document.getElementById('adminPassInput').value.trim();
+            if (inputPass === DEFAULT_ADMIN_PASSCODE) {
+                closeAdminAuthModal();
+                openAdminDashboard();
+                showToast("Authenticated as Website Owner!");
+            } else {
+                document.getElementById('adminAuthError').classList.remove('hidden');
+            }
+        }
+
+        function openAdminDashboard() {
+            document.getElementById('activePinDisplayText').innerText = currentActivePin;
+            document.getElementById('masterPinInput').value = currentActivePin;
+            document.getElementById('adminDashboardModal').classList.remove('hidden');
+        }
+
+        function closeAdminDashboard() {
+            document.getElementById('adminDashboardModal').classList.add('hidden');
+        }
+
+        function updateMasterPin() {
+            const newPin = document.getElementById('masterPinInput').value.trim();
+            if(!newPin) {
+                showToast("Please enter a valid PIN.");
+                return;
+            }
+            currentActivePin = newPin;
+            localStorage.setItem('allexam_master_pin', newPin);
+            updatePinDisplays();
+            showToast(`Master Access PIN successfully updated to: ${newPin}`);
+        }
+
+        function updatePinDisplays() {
+            const activePinEl = document.getElementById('activePinDisplayText');
+            if(activePinEl) activePinEl.innerText = currentActivePin;
+        }
+
+        function handleSaveSubject(e) {
+            e.preventDefault();
+            const title = document.getElementById('adminSubjectTitle').value.trim();
+            const cat = document.getElementById('adminSubjectCat').value;
+            const status = document.getElementById('adminSubjectStatus').value;
+            const time = document.getElementById('adminSubjectTime').value.trim() || 'Today';
+            const obj = document.getElementById('adminObjAnswers').value.trim() || 'Obj keys updating...';
+            const essay = document.getElementById('adminEssayAnswers').value.trim() || 'Essay solutions updating...';
+
+            const editId = document.getElementById('editSubjectId').value;
+
+            if (editId) {
+                // Edit existing
+                const idx = subjects.findIndex(s => s.id == editId);
+                if(idx !== -1) {
+                    subjects[idx] = { ...subjects[idx], title, category: cat, status, time, obj, essay };
+                }
+            } else {
+                // Add new paper
+                const newSub = {
+                    id: Date.now(),
+                    title,
+                    category: cat,
+                    status,
+                    time,
+                    unlocked: true, // Owner created, unlocked by default
+                    obj,
+                    essay
+                };
+                subjects.unshift(newSub);
+            }
+
+            saveSubjectsState();
+            renderSubjectCards();
+            clearAdminForm();
+            showToast("Subject paper saved & published live!");
+        }
+
+        function clearAdminForm() {
+            document.getElementById('editSubjectId').value = '';
+            document.getElementById('adminSubjectTitle').value = '';
+            document.getElementById('adminSubjectTime').value = '';
+            document.getElementById('adminObjAnswers').value = '';
+            document.getElementById('adminEssayAnswers').value = '';
+        }
+
+        function saveSubjectsState() {
+            localStorage.setItem('allexam_subjects', JSON.stringify(subjects));
+        }
+
+        /* -------------------------------------------------------------
+           6. SEARCH & CATEGORY FILTERS
+           ------------------------------------------------------------- */
+        function filterCategory(cat) {
+            currentFilter = cat;
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                btn.className = "cat-btn px-4 py-2 rounded-xl text-xs font-bold transition bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700";
+            });
+            event.target.className = "cat-btn px-4 py-2 rounded-xl text-xs font-bold transition bg-brand-600 text-white shadow-md";
+            renderSubjectCards();
+        }
+
+        function searchSubjects(val) {
+            renderSubjectCards();
+        }
+
+        /* -------------------------------------------------------------
+           7. UTILITY & HELPERS
+           ------------------------------------------------------------- */
+        function copyAnswerText(subjectId) {
+            const sub = subjects.find(s => s.id === subjectId);
+            if (!sub) return;
+
+            const textToCopy = `=== ${sub.title} ===\n\nOBJECTIVE KEYS:\n${sub.obj}\n\nESSAY & THEORY SOLUTIONS:\n${sub.essay}\n\nDownloaded from: allexamsureanswers.net.com`;
+            
+            const textarea = document.createElement('textarea');
+            textarea.value = textToCopy;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+
+            showToast("Answers copied to clipboard!");
+        }
+
+        function toggleDarkMode() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('allexam_theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('allexam_theme', 'dark');
+            }
+        }
+
+        function showToast(msg) {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = 'pointer-events-auto bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900 px-4 py-3 rounded-2xl shadow-2xl border border-slate-700 dark:border-slate-300 text-xs font-bold flex items-center gap-2 transition-all duration-300 translate-y-2 opacity-0';
+            toast.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-400 text-sm"></i> <span>${msg}</span>`;
+            
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-2', 'opacity-0');
+            }, 10);
+
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-2');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
